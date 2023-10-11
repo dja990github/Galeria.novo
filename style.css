@@ -62,5 +62,7 @@ footer{
     align-items: center;
     background-color: #000000;
     margin-top: 20px;
-    color:white;
+    color:black;
+    font-size:black;
+    
 }
