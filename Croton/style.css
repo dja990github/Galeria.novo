@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: rgb(255, 215, 106);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2vh 2vw;
+  }
+
+  #título {
+    background-color: white;
+    padding: 1vh 2vw;
+    border-radius: 30px 30px 100% 100%;
+    text-align: center;
+    font-size: 2em;
+    max-width: 90vw;
+  }
+
+  #navNomes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2vh 2vw;
+    text-align: center;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 1vh 1vw;
+    border: none;
+    border-radius: 5px;
+  }
+
+  #decoration {
+    position: relative;
+    width: 90%;
+    margin: 2vh auto;
+    padding: 2vh;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+  }
+  #quadro {
+    margin-top: 1vh;
+    margin-left: 3vw;
+  }
+
+  #geoEcores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw;
+    margin: 2vh auto;
+  }
+
+  fieldset {
+    width: 90%;
+    max-width: 400px;
+    padding: 1vh;
+    border-radius: 20px;
+    border: 2px solid black;
+  }
+
+  #cores {
+    background: linear-gradient(to right, yellow, rgb(89, 255, 0), red);
+  }
+
+  #geo {
+    background: linear-gradient(to right, rgb(138, 255, 138), rgb(89, 255, 0), green);
+  }
+
+  ul {
+    margin-left: 1rem;
+    list-style: square;
+  }
+
+  li {
+    margin-left: 1.5rem;
+  }
+
+  table{
+    width: 100%;
+    border: 2px double black;
+  }
+  th{
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  
+  #folhaTamanho {
+    margin: 2vh auto;
+    padding: 1vh;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: #fff8dc;
+  }
+
+  #alt {
+    text-align: center;
+    margin: 2vh 0;
+  }
+
+  .imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2vh 0;
+  }
+
+  .imgs img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  @media (min-width: 768px) {
+    #navNomes {
+      justify-content: space-around;
+    }
+
+    #geoEcores {
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+    }
+
+    #folhaTamanho {
+      max-width: 500px;
+    }
+
+    .imgs img {
+      height: 120px;
+      width: 120px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #título {
+      font-size: 1.5em;
+    }
+
+    button {
+      font-size: 0.9em;
+      padding: 0.5vh 1vw;
+    }
+
+    .imgs img {
+      height: 80px;
+      width: 80px;
+    }
+  }
