@@ -130,6 +130,17 @@
     border-radius: 10px;
   }
 
+  .tabela-responsiva {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .tabela-responsiva table {
+    min-width: 600px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
   @media (min-width: 768px) {
     #navNomes {
       justify-content: space-around;
@@ -165,3 +176,10 @@
       width: 80px;
     }
   }
+  
+  @media (max-width: 480px) {
+    .tabela-responsiva table {
+      font-size: 0.8em;
+    }
+  }
+  
