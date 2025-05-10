@@ -8,6 +8,7 @@
     background-color: rgb(255, 215, 106);
     font-family: Arial, sans-serif;
     line-height: 1.5;
+    overflow-x: hidden;
   }
 
   nav {
