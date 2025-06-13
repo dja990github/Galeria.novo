@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
+    <link rel="icon" href="./shell.png">
+    <title>Shell</title>
+</head>
+<body>
+    <form id="maquininha">
+        <h2>Cielo</h2>
+        <div>
+            Enter password...
+        </div>
+        <input id="cod" type="number">
+        <br><br>
+        <button id="rest" onclick="cod.value = null">*</button>
+        <input type="submit" value="__">
+    </form>
+    <button id="btnIniciar">
+        Fazer pedido:
+    </button>
+    <form id="form">
+        Formulário para pedido:
+        <p>
+            <u>R$</u>
+            <input id="qtd" type="number">
+        </p>
+        <label>
+            Gasolina:<input id="G" type="radio"><br>
+            Etsnol: <input id="E" type="radio"><br>
+            Diesel: <input id="D" type="radio"><br>
+        </label>
+        <p>
+        <input type="submit" value="Confirmar"/>
+        <h4 id="btnMudar" onclick="pagTypeFunction()">Mudar</h4>
+        </p>
+    </form>
+    <img id="bg" src="./bomba de gasosa.png">
+    <img src="./Carro N3.gif" id="CarroG">
+    <div id="conteiner" class="conteiner">
+    </div>
+    <div id="combustivel" class="conteiner">
+    </div>
+    <section>
+        <img id="tabela" src="./shel tabela.png">
+        <ul>
+            <li>Gasolina: 5.65</li>
+            <li>Diesel: 3.50</li>
+            <li>Etanol: 2.99</li>
+        </ul>
+    </section>
+    <img id="shell" src="./shell.png">
+    <footer id="footer"> 
+    </footer>
+    <script>
+        const banco = {
+                Armando: "994256588",
+                Emilio: "913736020",
+                Jubileu: "990106791",
+                Stroncionaldo: "88765524",
+                Creuza: "442567691",
+        };
+        usrN = 2;
+        document.addEventListener('keydown', function (event) {
+            if (usrN % 2 === 0) {
+                if (event.code === "KeyQ") {
+                    let valores = "";
+                        for (let usr = 0; usr < Object.keys(banco).length; usr++) {
+                            valores += "<li>" + 
+                                Object.keys(banco)[usr] + "_" + 
+                                Object.values(banco)[usr] + "</li>";
+                        }
+                        document.querySelector('ul').style.display = "block";
+                        document.querySelector('ul').innerHTML = valores;
+                }  
+            } else {
+                document.querySelector('ul').style.display = "none";
+            }         
+            usrN++; 
+        });
+        const btnIniciar = document.getElementById("btnIniciar");
+        const form = document.getElementById("form");
+        const qtd = document.getElementById("qtd");
+        const G = document.getElementById("G");
+        const D = document.getElementById("D");
+        const E = document.getElementById("E");
+        const footer = document.getElementById("footer");
+        const maquininha = document.getElementById("maquininha");
+        document.getElementById("CarroG").style.right = window.innerWidth + "px";
+        let Comb = "combustivel";
+        let pagType = 2;
+        let tabela = [
+            5.598, /* gasolina */
+            4.596, /* diesel   */
+            4.196, /* etanol   */
+        ];
+        function pagTypeFunction() {
+            if (pagType % 2 === 0) {
+                document.querySelector('u').innerText = "Litrs";//numeros pares
+            } else {
+                document.querySelector('u').innerText = "R$"; //numeros impares
+            }
+            pagType++;
+        }
+        btnIniciar.addEventListener('click' , function (event) {
+            form.style.visibility = "visible";       
+            document.getElementById("CarroG").style.right = window.innerWidth / 2 + "px";
+        })
+        form.addEventListener('submit' , function (event) {
+            event.preventDefault();
+            Quantidade = qtd.value;
+            let resultado;
+            if (G.checked) {
+                    Comb = 0;
+            }
+            if (E.checked) {
+                    Comb = 1;
+            }
+            if (D.checked) {
+                    Comb = 2;
+            }
+            if (pagType % 2 === 0) {
+                    resultado = (Quantidade / tabela[Comb]).toFixed(2) + " Litros";
+            } else {
+                    resultado = "R$ " + (Quantidade * tabela[Comb]).toFixed(2);
+            }
+            alert(resultado);
+           form.style.visibility = "hidden";
+           maquininha.style.visibility = "visible";
+           maquininha.addEventListener('submit' , function(event) {
+            event.preventDefault();
+            let cartao = document.getElementById("cod").value;
+            let user = Object.keys(banco).find(nome => banco[nome] === cartao)
+            if (user) {
+                alert("transferencia concluida!");
+                let notaFiscal = "<h2>Nota Fiscal de Venda de Combustível</h2>Posto de " + 
+                "Combustível Shell<br>Endereço: Avenida Guarulhos, 1234, Jardim Santa Mena, Guarulhos - SP<br>CNPJ: 00.000.000/0001-91<br><br>Dados do Comprador:<br>Nome: " + 
+                user + "<br>CPF: 673.483.XXX-XX<br>Endereço: Rua das Laranjeiras, 456, Guarulhos - SP<br><br>Dados da Transação:<br>Data da Compra:  " + 
+                new Date().toLocaleDateString() + "<br>Número da Nota Fiscal: 001234567<br>Quantidade de Combustível:<br>Valor Total: R$ " + resultado + 
+                "Forma de Pagamento: Cartão de Débito<br><br><br><i><u>Shell</u></i>";
+                footer.innerHTML = notaFiscal;
+                for (let top = 100; top > 0; top--) {
+                    requestAnimationFrame(() => {
+                        footer.style.top = top + "dvh";
+                        footer.style.height = "100dvh";
+                        footer.addEventListener('click' , function () {
+                            footer.style.top = 100 + "dvh";
+                            document.getElementById("CarroG").style.transitionDelay= 4 + "s"; 
+                            document.getElementById("combustivel").style.width = 12.59 + "dvw";
+                            document.getElementById("CarroG").style.right = -window.innerWidth + "px";
+                            setTimeout(() => {
+                                location.reload();
+                            }, 4000);
+                        })
+                });
+                }            
+            } else {
+                alert("senha incorreta");
+            }
+           })
+        })
+    </script>
+</body>
+</html>

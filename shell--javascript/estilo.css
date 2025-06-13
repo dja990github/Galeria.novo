@@ -1,0 +1,177 @@
+body{
+    background-color: red;
+    overflow: hidden;  
+}
+#maquininha{
+    visibility: hidden;
+    position: fixed;
+    top: 5dvh;
+    left: 5dvw;
+    background-color: black;
+    padding: 1dvw;
+    border-radius: 30px 30px 5cqw 5cqw;
+}
+#maquininha #rest{
+    background-color: red;
+    height: 3dvh;
+    width: 3dvw;
+    position: absolute;
+    bottom: 5%;
+    left: 20%;
+}
+#maquininha div{
+    height: 3%0;
+    width: 70%;
+    margin-inline: auto;
+    background-color: aqua;
+    color: black;
+    padding: 4dvh 2dvw;
+    border-radius: 1dvh;
+    border: 2px solid gray;
+}
+#maquininha input[type=submit] {
+    background-color: greenyellow;
+    padding-inline: 1dvw;
+    padding-bottom: 5dvh;
+    margin-right: -30%;
+    border-radius: 1dvi;
+}
+form{
+    font-size: larger;
+    visibility: hidden;
+    position: fixed;
+    text-align: center;
+    background-color: rgb(136, 0, 0);
+    border: 2px 2px 0 0;
+    margin-left: 10%;
+    padding: 2dvh 2dvw;
+    color: white;
+    border-radius: 30px 30px 0 0;
+}
+form input{
+    border-radius: 20px 0 20px 20px;
+}
+#btnIniciar{
+    border-radius: 100% 0 100% 100%;
+    margin-inline: 40dvw;
+    background-color: black;
+    padding: 3dvh 3dvw;
+    color: white;
+}
+form input[type=radio] {
+    height: 3dvh;
+    width: 4dvw;
+}
+form input[type=submit] {
+    text-decoration: underline;
+    padding: 3%;
+    background-color: #ffffff;
+    border: 2px solid rgb(0, 0, 0);
+}
+#btnMudar{
+    position: relative;
+    border-radius: 30px;
+    background-color: gray;
+    padding: 0.5dvh 0.5dvw;
+    color: yellow;
+
+}
+ul{
+    background-color: black;
+    color: wheat;
+    padding: 2dvh 4dvw;
+    border-radius: 30px;
+    border: 5px double yellow;
+    display: block;
+    position: fixed;
+    right: 1dvw;
+    width: 10dvw;
+}
+#CarroG{
+    position: fixed;
+    right: auto;
+    bottom: 2%;
+    transform: scaleX(-1);
+    height: 50vh;
+    width: 30vw;
+    transition-duration: 2s;
+    transition-delay: 0.5;
+}
+#shell{
+    position: fixed;
+    top: 5dvh;
+    right:21dvw;
+    height: 20vh;
+    width: 20vw;
+    background-color: black;
+    padding: 1%;
+    border-radius: 20%;
+}
+section{
+    position: fixed;
+    top: 10 dvh;
+    right: 30dvw;
+    
+}
+#tabela{
+    position: fixed;
+    bottom: 5dvh;
+    right: 10dvw;
+    height: 30dvh;
+    width: 30dvw;
+}
+
+
+
+#conteiner{
+    background-color: #ffffff;
+}
+#combustivel{
+    transition-timing-function: linear;
+    transition-delay: 2s;
+    position: absolute;
+    transition-duration: 2s;
+    background-color: rgb(47, 255, 0);
+    border-radius: 30dvw;
+    border: 3px solid transparent;
+    bottom: 50.3dvh;
+    height: 3.3dvh;
+    width: 2dvw;
+    left: 50.2dvw;
+
+}
+.conteiner{
+    position: fixed;
+    bottom: 50dvh;
+    left: 50dvw;
+    height: 4dvh;
+    width: 13dvw;
+    border-radius: 40dvw;
+    border: 3px solid black;
+}
+#bg{
+position: fixed;
+bottom: 10%;
+right: 25%;
+height: 40vh;
+width: 35vw;
+}
+#bg{
+    position: fixed;
+    left: 20%;
+}
+footer{
+    position: fixed;
+    text-align: center;
+    width: 50dvw;
+    height: 10dvh;
+    top: 100dvh;
+    margin-left: 20dvw;
+    font-size: large;
+    padding: 1dvw 2dvw;
+}
+#footer{
+    transition-duration: 2s;
+    background-color: unset;
+    background-color: wheat;
+}
